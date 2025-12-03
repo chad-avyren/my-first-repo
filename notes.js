@@ -15,7 +15,14 @@ function readNotes() {
         console.log('No notes yet!');
     }
 }
-
+function deleteAllNotes() {
+    if (fs.existsSync('notes.txt')) {
+        fs.unlinkSync('notes.txt');
+        console.log('All notes deleted!');
+    } else {
+        console.log('No notes to delete!');
+    }
+}
 // Try it out
 addNote('This is my first note!');
 readNotes();
